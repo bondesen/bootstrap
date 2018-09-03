@@ -53,7 +53,7 @@ sudo apt-get --assume-yes install git
 
 # Clone toolbox repo if not already present
 if [ ! -d ".toolbox" ]; then
-  git clone https://github.com/bondesen/toolbox.git .toolbox
+  git clone git@github.com/bondesen/toolbox.git .toolbox
 fi
 
 # Checkout specified branch
