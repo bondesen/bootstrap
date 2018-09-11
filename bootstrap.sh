@@ -57,9 +57,10 @@ if [ ! -d ".toolbox" ]; then
   git clone http://github.com/bondesen/toolbox.git .toolbox
 fi
 
-# Checkout specified branch
+# Checkout specified branch and change to ssh
 cd .toolbox
 git checkout ${BRANCH}
+git remote set-url origin git@github.com:bondesen/toolbox.git
 
 # Run Ansible playbook
 ansible-playbook ubuntu.yml -i hosts -vv ${ANSIBLE_ARGS}
