@@ -54,7 +54,7 @@ sudo apt-get --assume-yes install git
 # Clone toolbox repo if not already present
 if [ ! -d ".toolbox" ]; then
   #git clone git@github.com:bondesen/toolbox.git .toolbox
-  git clone https://github.com/bondesen/toolbox.git .toolbox
+  git clone https://raw.github.com/bondesen/toolbox.git .toolbox
 fi
 
 # Checkout specified branch and change to ssh
