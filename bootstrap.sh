@@ -52,15 +52,15 @@ sudo apt-get --assume-yes install ansible
 sudo apt-get --assume-yes install git
 
 # Clone toolbox repo if not already present
-if [ ! -d ".toolbox" ]; then
+if [ ! -d "toolbox" ]; then
   #git clone git@github.com:bondesen/toolbox.git .toolbox
-  git clone https://github.com/bondesen/toolbox.git .toolbox
+  git clone https://github.com/bondesen/toolbox.git toolbox
 fi
 
 # Checkout specified branch and change to ssh
-cd .toolbox
+cd toolbox
 git checkout ${BRANCH}
 git remote set-url origin git@github.com:bondesen/toolbox.git
 
 # Run Ansible playbook
-ansible-playbook ubuntu.yml -i hosts -vv ${ANSIBLE_ARGS}
+ansible-playbook setup_bondesen_environment.yml -i hosts -vv ${ANSIBLE_ARGS}
