@@ -9,7 +9,7 @@ fi
 
 # DEFAULTS
 BRANCH="master"
-ANSIBLE_ARGS=""
+ANSIBLE_ARGS="--module-path=~toolbox/ansible/my_modules"
 
 # Use -gt 1 to consume two arguments per pass in the loop (e.g. each
 # argument has a corresponding value to go with it).
