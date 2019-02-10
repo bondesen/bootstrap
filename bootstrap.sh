@@ -52,7 +52,7 @@ sudo apt-get --assume-yes install ansible
 sudo apt-get --assume-yes install git
 
 # Clone ansible luarocks module if not already present
-if [ ! -e ".ansible/plugins/modules/ansible-module-luarocks" ]; then
+if [ ! -d ".ansible/plugins/modules/ansible-module-luarocks" ]; then
   mkdir -p .ansible/plugins/modules
   git clone https://github.com/rahulg/ansible-module-luarocks.git .ansible/plugins/modules/ansible-module-luarocks
 fi
