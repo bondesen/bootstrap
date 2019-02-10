@@ -51,6 +51,12 @@ sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes install ansible
 sudo apt-get --assume-yes install git
 
+# Clone ansible luarocks module if not already present
+if [ ! -d "playbooks/my_modules" ]; then
+  mkdir -p playbooks/my_modules
+  git clone https://github.com/rahulg/ansible-module-luarocks.git playbooks/my_modules/
+fi
+
 # Clone toolbox repo if not already present
 if [ ! -d "toolbox" ]; then
   #git clone git@github.com:bondesen/toolbox.git toolbox
