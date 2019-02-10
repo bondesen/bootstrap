@@ -9,7 +9,7 @@ fi
 
 # DEFAULTS
 BRANCH="master"
-ANSIBLE_ARGS="--module-path=~/playbooks/my_modules"
+ANSIBLE_ARGS="--module-path=~/.ansible/plugins/modules"
 
 # Use -gt 1 to consume two arguments per pass in the loop (e.g. each
 # argument has a corresponding value to go with it).
@@ -52,10 +52,10 @@ sudo apt-get --assume-yes install ansible
 sudo apt-get --assume-yes install git
 
 # Clone ansible luarocks module if not already present
-#if [ ! -e "playbooks/my_modules/luarocks.py" ]; then
-  mkdir -p playbooks/my_modules
-  git clone https://github.com/rahulg/ansible-module-luarocks.git playbooks/my_modules/
-#fi
+if [ ! -e ".ansible/plugins/modules/ansible-module-luarocks" ]; then
+  mkdir -p .ansible/plugins/modules
+  git clone https://github.com/rahulg/ansible-module-luarocks.git .ansible/plugins/modules/ansible-module-luarocks
+fi
 
 # Clone toolbox repo if not already present
 if [ ! -d "toolbox" ]; then
