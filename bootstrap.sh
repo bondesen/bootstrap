@@ -52,10 +52,10 @@ sudo apt-get --assume-yes install ansible
 sudo apt-get --assume-yes install git
 
 # Clone ansible luarocks module if not already present
-if [ ! -e "playbooks/my_modules/luarocks.py" ]; then
+#if [ ! -e "playbooks/my_modules/luarocks.py" ]; then
   mkdir -p playbooks/my_modules
   git clone https://github.com/rahulg/ansible-module-luarocks.git playbooks/my_modules/
-fi
+#fi
 
 # Clone toolbox repo if not already present
 if [ ! -d "toolbox" ]; then
